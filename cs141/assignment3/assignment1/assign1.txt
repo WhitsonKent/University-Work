@@ -1,0 +1,30 @@
+Script started on Thu, Feb  1, 2018  8:20:43 PM
+[A]0;~/cs141/assignments
+[32mKent@LAPTOP-8NQI0C6P [33m~/cs141/assignments[0m
+$ exit[C[Ccc assign1.c -o a.out[C[Cexit[K[C[Ccc assign1.c -o a.out
+]0;~/cs141/assignments
+[32mKent@LAPTOP-8NQI0C6P [33m~/cs141/assignments[0m
+$ ./a.our[Kt in.txt
+81 0 6714 792 891 792 
+4176
+]0;~/cs141/assignments
+[32mKent@LAPTOP-8NQI0C6P [33m~/cs141/assignments[0m
+$ ./a.out in.txt2.txt
+9 693 99 0 3537 
+7353
+]0;~/cs141/assignments
+[32mKent@LAPTOP-8NQI0C6P [33m~/cs141/assignments[0m
+$ ./a.out in2.txt[C[C[C[C[C[C[C[1P.txt3.txt
+891 0 891 72 
+198
+]0;~/cs141/assignments
+[32mKent@LAPTOP-8NQI0C6P [33m~/cs141/assignments[0m
+$ ./a.out in3.txt[1P.txt4.txt
+63 396 0 7362 9 0 792 
+2637
+]0;~/cs141/assignments
+[32mKent@LAPTOP-8NQI0C6P [33m~/cs141/assignments[0m
+$ exit
+exit
+
+Script done on Thu, Feb  1, 2018  8:21:29 PM

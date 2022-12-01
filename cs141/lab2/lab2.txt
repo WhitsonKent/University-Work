@@ -1,0 +1,154 @@
+Script started on Mon, Feb  5, 2018  1:44:31 PM
+]0;~/cs141/lab2
+[32mKent@LAPTOP-8NQI0C6P [33m~/cs141/lab2[0m
+$ cat lab2.c
+/*Kent Whitson
+104797895
+Jan 29
+Lab 2
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+//indicates max rows(10) and columns (5)
+#define M 10
+#define N 5
+//prototype
+void InitializeArray2D(int a[M][N]);
+void PopulateRandomValues2D(int a[M][N]);
+void PrintArray2D(int a[M][N]);
+void Sort2D(int a[M][N]);
+void LinearSearch2D(int a[M][N],int key);
+
+int main(){
+  int array[M][N];
+  int choice;
+  int search;
+  do
+  {
+	  printf("\nWhich function would you like to run?(0 to EXIT)\n");
+	  printf("1-InitializeArray2D\n2-PopulateRandomValues2D\n");
+	  printf("3-PrintArray2D\n4-Sort2D\n5-LinearSearch2D\n");
+	  scanf("%d",&choice);
+	  switch(choice)
+	  {
+		  case 1:
+		  printf("\nInitalizing array...\n");
+		  InitializeArray2D(array);
+		  printf("Array initalized\n");
+		  PrintArray2D(array);
+		  break;
+		  case 2:
+		  printf("\nPopulating array...\n");
+		  PopulateRandomValues2D(array);
+		  printf("Array populated\n");
+		  PrintArray2D(array);
+		  break;
+		  case 3:
+		  PrintArray2D(array);
+		  break;
+		  case 4:
+		  printf("\nSorting array...\n");
+		  Sort2D(array);
+		  printf("Finished sorting\n");
+		  PrintArray2D(array);
+		  break;
+		  case 5:
+		  printf("\nEnter the number you are searching for: ");
+		  scanf("%d",&search);
+		  LinearSearch2D(array,search);
+		  break;
+	  }	  
+  }while(choice!=0);
+}
+
+void InitializeArray2D(int a[M][N])
+/*This function initializes the array with zeroes*/
+{
+  //r for row, c for column
+  for(int r=0; r<M;r++){
+    for(int c=0; c<N;c++)
+    {
+    a[r][c]=0;
+    }
+  }
+}
+
+void PopulateRandomValues2D(int a[M][N])
+/*This populates the array with random values
+from 1 to 100*/
+{
+	//r for row, c for column
+	srand(time(NULL));//this makes its populated with random numbers
+	for(int r=0; r<M;r++)
+	{
+		for(int c=0; c<N;c++)
+		{
+			a[r][c]=1+rand()%100;//selects a value from 1 to 100
+		}
+	}
+}
+void PrintArray2D(int a[M][N])
+{
+	for(int r=0; r<M;r++)
+	{
+		for(int c=0; c<N;c++)
+		{
+		printf("%d ",a[r][c]);
+		}
+	printf("\n");
+	}
+}
+
+void Sort2D(int a[M][N])
+{
+	int hold = 0;
+	int flag;
+	int r2=0,c2=0;
+	do{
+		flag=0;
+		for(int r=0; r<M;r++)
+		{
+			for(int c=0; c<N;c++)
+			{
+				if(a[r][c]>a[r][c+1] && c+1<N)
+				{
+					hold = a[r][c];
+					a[r][c]=a[r][c+1];
+					a[r][c+1]=hold;
+					flag =1;
+				}
+				else if(a[r][c]>a[r+1][0] && r+1<M)
+				{
+					hold = a[r][c];
+					a[r][c]=a[r+1][0];
+					a[r+1][0]=hold;
+					flag=1;
+				}
+			}
+		}
+	}while(flag);
+}
+void LinearSearch2D(int a[M][N],int key)
+{
+	int found;
+	int counter=0;
+	for(int r=0; r<M;r++)
+	{
+		for(int c=0; c<N;c++)
+		{
+			if (key==a[r][c]){ 
+			found=1;
+			counter+=1;
+			}
+		}
+	}
+	if(found) printf("FOUND %d INSTANCE(S) OF %d\n",counter,key);
+	else printf("ERROR 404: VALUE NOT FOUND\n");
+}]0;~/cs141/lab2
+[32mKent@LAPTOP-8NQI0C6P [33m~/cs141/lab2[0m
+$ cat lab2.c[C[C[6Pexit
+exit
+
+Script done on Mon, Feb  5, 2018  1:44:41 PM

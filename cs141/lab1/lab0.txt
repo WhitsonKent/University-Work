@@ -1,0 +1,36 @@
+Script started on Mon, Jan 15, 2018  7:42:09 PM
+]0;~/cs141/lab1
+[32mKent@LAPTOP-8NQI0C6P [33m~/cs141/lab1[0m
+$ cat erc[K[Kxercise1.c
+/* WHITSON, Kent
+ID: 104797895
+Lab Exercise #0
+Date: January 15, 2016
+Purpose: This is a sample C program used for practice 
+*/
+
+#include <stdio.h>
+
+/* Main Program Routine */
+int main()
+{
+	printf("My name is: Kent Whiitson\n");
+	printf("This is my Nth C program");
+	return 0;
+}]0;~/cs141/lab1
+[32mKent@LAPTOP-8NQI0C6P [33m~/cs141/lab1[0m
+$ a.out
+bash: a.out: command not found
+]0;~/cs141/lab1
+[32mKent@LAPTOP-8NQI0C6P [33m~/cs141/lab1[0m
+$ a.out[C[Ccat exercise1.c[K[K[K[K[K[K[K[K[K[K[K[K[K[Kx[Kc er[Kxercise1.c
+]0;~/cs141/lab1
+[32mKent@LAPTOP-8NQI0C6P [33m~/cs141/lab1[0m
+$ a.out
+bash: a.out: command not found
+]0;~/cs141/lab1
+[32mKent@LAPTOP-8NQI0C6P [33m~/cs141/lab1[0m
+$ exit
+exit
+
+Script done on Mon, Jan 15, 2018  7:43:14 PM

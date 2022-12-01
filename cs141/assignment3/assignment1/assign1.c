@@ -1,0 +1,92 @@
+/* WHITSON,  Kent 
+ID:  104797895
+Assignment 1
+Date: January 31, 2018
+Purpose: This is a sample C program used for practice 
+I acknowledge that this is my own work and did not receive any unauthorized help with it.*/ 
+
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <wchar.h>
+#include <string.h>
+
+
+unsigned int reverseInteger(unsigned int x);
+unsigned int generateMagicNumber(unsigned int x);
+unsigned int absoluteDifference(unsigned int x);
+
+
+int main(int argc, char *argv[])
+//allows us to choose the file we get our entries from
+{
+	int n;//how many numbers we need to find the magic number of
+	unsigned int ui=0,diff=0,largest=0;
+	/*ui=user input
+	diff=absolute difference
+	largest= largest absolute difference*/
+	FILE *fp;
+	fp = fopen(argv[1], "r");//its assumed the file isn't empty
+	/*reads the first number in the file to find nums*/
+	for (int i = 0; i < 1; i++){
+        fscanf(fp, "%d,", &n);
+    }
+	/*generates n magic numbers
+	Its assumed that there are n integers following the input
+	for n*/
+	for (int i=0; i < n; i++){
+        fscanf(fp, "%u,", &ui );
+		printf("%u ",generateMagicNumber(ui));
+		diff=absoluteDifference(ui);
+		//determines the largest absolute difference
+		if(diff>=largest)
+		{
+			largest=diff;
+		}
+    }
+	printf("\n%u\n",largest);
+	fclose(fp);
+
+}
+
+unsigned int reverseInteger(unsigned int x)
+/*This function takes a number and returns its reverse
+input is any positive integer, otherwise it won't work
+output is input reversed*/
+{
+	unsigned int rev;//rev means reverseInteger
+	do{
+		rev = rev*10 +x%10;/*by multiplying reverse by 10
+		we are able to place the next digit in the sequence which is
+		x mod 10*/
+		x=x/10;/*by dividing by 10, we can then move on to
+		the next digit in the sequence*/
+	}while(x!=0);
+	return rev;
+}
+
+unsigned int generateMagicNumber(unsigned int x)
+//returns the magic number by reversing the absolute difference
+//of x and its reverse
+{
+	unsigned int diff = absoluteDifference(x);
+	fflush(stdout);
+	unsigned int magic = reverseInteger(diff);
+	return magic;
+}
+unsigned int absoluteDifference(unsigned int x)
+//finds the absolute difference between x and its reverse
+//revX meaning reverse x
+//returns the absolute difference
+{
+	unsigned int revX = reverseInteger(x);
+	if (x>revX)
+	{
+		return x-revX ;
+	}
+	else
+	{
+		return revX-x;
+	}
+}

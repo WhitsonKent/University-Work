@@ -1,0 +1,43 @@
+1) 12
+2a)	for(int i =1;i<=128;i*=2){
+		printf("%d",i);
+	}
+b)	for(int i =9384;i>0;i/=2){
+		printf("%d",i);
+	}
+3a)	BEFORE: 1248163264128
+	AFTER: 1248163264128 
+b)	BEFORE:	93844692234611735862931467336189421
+	AFTER: 93844692234611735862931467336189421
+4a)	
+	int n = 1;
+	int a = 1;
+	if(a>n && n>0){
+		printf("Good!\n");
+	}
+	else printf("Hello!\n");
+b)
+	for(int k=1;;){
+		if(k>10){
+			break;
+		}
+		printf("%d ",k);
+		k=k+1;
+	}
+c)
+	for(int k=1;;){
+		printf("%d ",k);
+		k=k+1;
+		if(k>10){
+			break;
+		}
+	}
+d)
+	for(float x=10.0;;){
+		if(x<1.001){
+			break;
+		}
+		printf("%.3f ",x);
+		x=sqrt(x);
+	}
+	
